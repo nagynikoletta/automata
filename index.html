@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<title>Üdítő Automata</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link href="index.css" rel="stylesheet">
+</head>
+<body>
+<div class="container automata">
+
+<div class="bal" id="bal"></div>
+
+
+<div class="jobb">
+<div class="kepernyo" id="kepernyo">
+
+</div>
+
+<div class="gombok" id="gombok">
+
+</div>
+
+<button>OK</button>
+</div>
+
+</div>
+
+<script>
+//gombok létrehozása
+let gomb_tarolo=document.getElementById("gombok");
+for(let i=1; i<=9; i++){
+gomb_tarolo.innerHTML+='<button onclick="katt('+i+')">'+ i +"</button>"
+}
+function katt(szam){
+document.getElementById("kepernyo").innerHTML=szam;
+}
+//Üdítők felpakolása
+let uditok=document.getElementById("bal");
+for(let i=0;i<3;i++){
+uditok.innerHTML+='<img src="viz.png">'
+}
+
+
+</script>
+<body>
+</html>
