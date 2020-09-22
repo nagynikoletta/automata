@@ -51,5 +51,26 @@
 .bal img{
 	width:calc(100%/3);
 }
+.bal div img{
+	width: 100%;
+}
+.tarolo{
+	width: 90%;
+	height: 100px;
+	background-color: antiquewhite;
+	margin: auto;
+	margin-top: 100px;
+	border-radius: 10px;
+}
+.bal div{
+	width: calc(100%/3);
+	float:left;
+	text-align:center;
+}
 
-
+.tarolo img{
+	height: 100%;
+	display: block;
+	margin: auto;
+	transform: retate(-90deg);
+}

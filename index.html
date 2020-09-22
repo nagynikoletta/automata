@@ -14,34 +14,71 @@
 
 <div class="jobb">
 <div class="kepernyo" id="kepernyo">
-
 </div>
 
 <div class="gombok" id="gombok">
-
 </div>
 
-<button>OK</button>
+<button onclick="vasarlas()">OK</button>
+<div class="tarolo">
+
+</div>
 </div>
 
 </div>
 
 <script>
 //gombok létrehozása
+let uditok=document.getElementById("bal");
+let udito_kepek=[
+    "apenta.jpg", 
+    "cocacola.png", 
+    "cola.jpg" ,
+    "hellkave.jpg",
+    "kinley.jpg",
+    "marka.jpg"];
+
+let udito_kepek = {
+    150,
+    250,
+    200,
+    200,
+    180,
+    120,
+}
+
 let gomb_tarolo=document.getElementById("gombok");
+let kivalasztott=-1;
+
 for(let i=1; i<=9; i++){
 gomb_tarolo.innerHTML+='<button onclick="katt('+i+')">'+ i +"</button>"
 }
+
 function katt(szam){
 document.getElementById("kepernyo").innerHTML=szam;
 }
-//Üdítők felpakolása
-let uditok=document.getElementById("bal");
-for(let i=0;i<3;i++){
-uditok.innerHTML+='<img src="viz.png">'
+
+function katt(szam){
+    document.getElementById("kepernyo").innerHTML=szam;
+    kivalasztott =szam;
 }
 
+function vasarlas(){
+    if(udito_kepek [kivalasztott-1] == undefined)
+    {
+    document.getElementById("kepernyo").innerHTML + "Elfogyott!"}
+else{
+    alert("Megvetted a " + udito_kepek[kivalasztott-1] + " üdítőt!")
+    document.getElementById("tarolo").innerHTML + '<img src="'+udito_kepek[kivalasztott-1]+'">';
+}
 
+}
+//Üdítők felpakolása
+
+
+for(let i=0;i<udito_kepek.length;i++){
+    uditok.innerHTML+='<div><img src="'+udito_kepek[i]+'">'+(i+1)+'</div>';
+}
 </script>
 <body>
 </html>
